@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'distribution'
+    id 'checkstyle'
 }
 
 group 'hexlet.code'
@@ -26,4 +27,7 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+run {
+    standardInput = System.in
 }
