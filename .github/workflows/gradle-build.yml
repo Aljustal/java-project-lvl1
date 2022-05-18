@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Gradle build
-        run:  make build
+        run:  gradle build
