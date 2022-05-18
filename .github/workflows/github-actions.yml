@@ -1,9 +1,14 @@
-name: GitHub Actions
-on: [push]
+name: Gradle build
+on: push
 jobs:
-  Explore-GitHub-Actions:
+  gradle:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: make build # отвечает за запуск gradle build
-      - uses: docker://github/super-linter:v2.1.0 #отвечает за запуск линтера?
+      - uses: actions/setup-java@v2
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+
+      - name: Execute Gradle build
+        run: ./gradlew build
