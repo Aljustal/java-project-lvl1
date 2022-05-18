@@ -1,8 +1,16 @@
 name: Gradle build
-on: push
+on:
+  push:
+    branches:
+      - '**'
+    tags:
+      - '**'
+
 jobs:
-  gradle:
+  build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+
       - name: Gradle build
-        run:  gradle build
+        uses: make build
