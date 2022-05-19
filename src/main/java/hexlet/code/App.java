@@ -14,12 +14,14 @@ public class App {
 
         int userChoice = choice.nextInt();
 
-//        switch (userChoice) {
-//            case 1: Cli.greeting();
-//                break;
-//            case 2: Even.startGame();
-//                break;
-//        }
+        switch (userChoice) {
+            case 1: Cli.greeting();
+                break;
+            case 2: Even.startGame();
+                break;
+            default:
+
+        }
 
     }
 }
