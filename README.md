@@ -3,3 +3,4 @@
 [![Gradle build](https://github.com/Aljustal/java-project-lvl1/workflows/gradle-build/badge.svg)](https://github.com/Aljustal/java-project-lvl1/actions)
 [![asciicast](https://asciinema.org/a/feWbrY30hVGBxgj6OYlJfBZMn.svg)](https://asciinema.org/a/feWbrY30hVGBxgj6OYlJfBZMn)
 [![asciicast](https://asciinema.org/a/fjEplggjtbLci2htGRK71koiK.svg)](https://asciinema.org/a/fjEplggjtbLci2htGRK71koiK)
+[![asciicast](https://asciinema.org/a/lZZRQUUWytcRAMNcKGBVqj9Wk.svg)](https://asciinema.org/a/lZZRQUUWytcRAMNcKGBVqj9Wk)
