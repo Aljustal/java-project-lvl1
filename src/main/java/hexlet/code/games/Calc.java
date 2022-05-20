@@ -12,13 +12,14 @@ public class Calc {
         final char subtraction = '-';
         final char addition = '+';
         final char multiplication = '*';
+        final int maxOperationsCount = 3;
         final char[] operations = {subtraction, addition, multiplication};
 
         int correctAnswersCount = 0;
         while (correctAnswersCount < Engine.GAMESCORETOWIN) {
             int randomNum1 = Engine.getRandomNum(Engine.MINRANDOM, Engine.MAXRANDOM);
             int randomNum2 = Engine.getRandomNum(Engine.MINRANDOM, Engine.MAXRANDOM);
-            int randomNumberOperation = (int) (0 + Math.random() * 3 - 0);
+            int randomNumberOperation = (int) (0 + Math.random() * maxOperationsCount - 0);
             char operation = operations[randomNumberOperation];
 
             int correctAnswer = switch (operation) {
@@ -36,7 +37,8 @@ public class Calc {
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else {
-                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was " + correctAnswer + ".");
+                String message = " is wrong answer ;(. Correct answer was ";
+                System.out.println("'" + userAnswer + "'" + message + correctAnswer + ".");
                 break;
             }
 
