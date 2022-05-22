@@ -9,9 +9,12 @@ public class Even {
 
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
 
+        final int MIN_RANDOM = 1;
+        final int MAX_RANDOM = 100;
+        final int GAME_SCORE_TOWIN = 3;
         int correctAnswersCount = 0;
-        while (correctAnswersCount < Engine.GAMESCORETOWIN) {
-            int randomNum = Engine.getRandomNum(Engine.MINRANDOM, Engine.MAXRANDOM);
+        while (correctAnswersCount < GAME_SCORE_TOWIN) {
+            int randomNum = Engine.getRandomNum(MIN_RANDOM, MAX_RANDOM);
             System.out.println("Question: " + randomNum);
             System.out.print("Your answer: ");
             Scanner userAnswerScanner = new Scanner(System.in);
@@ -31,7 +34,7 @@ public class Even {
                 System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was 'yes'.");
                 break;
             }
-            if (correctAnswersCount == Engine.GAMESCORETOWIN) {
+            if (correctAnswersCount == GAME_SCORE_TOWIN) {
                 Engine.conratulationUser(userName);
             }
         }
