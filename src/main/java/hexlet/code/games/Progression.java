@@ -10,10 +10,13 @@ public class Progression {
         final int minRandomProgression = 1;
         final int maxRandomProgression = 5;
         final int lengthProgression = 10;
+        final int minRandom = 1;
+        final int maxRandom = 100;
+        final int gameScoreToWin = 3;
 
         int correctAnswersCount = 0;
-        while (correctAnswersCount < Engine.GAME_SCORE_TOWIN) {
-            int randomNum = Engine.getRandomNum(Engine.MIN_RANDOM, Engine.MAX_RANDOM);
+        while (correctAnswersCount < gameScoreToWin) {
+            int randomNum = Engine.getRandomNum(minRandom, maxRandom);
             int randomProgression = Engine.getRndNum(minRandomProgression, maxRandomProgression);
             int correctAnswer = Engine.getRndNum(0, lengthProgression);
             System.out.print("Question:");
