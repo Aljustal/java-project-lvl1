@@ -42,7 +42,6 @@ public class Progression {
                 System.out.println("'" + userAnswer + "'" + message + correctAnswer + ".");
                 break;
             }
-
             if (correctAnswersCount == Engine.GAME_SCORE_TOWIN) {
                 Engine.conratulationUser(userName);
             }
