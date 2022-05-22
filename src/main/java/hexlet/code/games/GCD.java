@@ -10,13 +10,13 @@ public class GCD {
 
         System.out.println("Find the greatest common divisor of given numbers.");
 
-        final int MIN_RANDOM = 1;
-        final int MAX_RANDOM = 100;
-        final int GAME_SCORE_TOWIN = 3;
+        final int minRandom = 1;
+        final int maxRandom = 100;
+        final int gameScoreTowin = 3;
         int correctAnswersCount = 0;
-        while (correctAnswersCount < GAME_SCORE_TOWIN) {
-            int randomNum1 = Engine.getRandomNum(MIN_RANDOM, MAX_RANDOM);
-            int randomNum2 = Engine.getRandomNum(MIN_RANDOM, MAX_RANDOM);
+        while (correctAnswersCount < gameScoreTowin) {
+            int randomNum1 = Engine.getRandomNum(minRandom, maxRandom);
+            int randomNum2 = Engine.getRandomNum(minRandom, maxRandom);
 
             System.out.println("Question: " + randomNum1 + " " + randomNum2);
             System.out.print("Your answer: ");
@@ -32,7 +32,7 @@ public class GCD {
                 System.out.println("'" + userAnswer + "'" + message + correctAnswer + ".");
                 break;
             }
-            if (correctAnswersCount == GAME_SCORE_TOWIN) {
+            if (correctAnswersCount == gameScoreTowin) {
                 Engine.conratulationUser(userName);
             }
         }

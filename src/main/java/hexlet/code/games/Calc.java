@@ -10,9 +10,9 @@ public class Calc {
 
 
         System.out.println("What is the result of the expression?");
-        final int MIN_RANDOM = 1;
-        final int MAX_RANDOM = 100;
-        final int GAME_SCORE_TOWIN = 3;
+        final int minRandom = 1;
+        final int maxRandom = 100;
+        final int gameScoreTowin = 3;
         final char subtraction = '-';
         final char addition = '+';
         final char multiplication = '*';
@@ -20,9 +20,9 @@ public class Calc {
         final char[] operations = {subtraction, addition, multiplication};
 
         int correctAnswersCount = 0;
-        while (correctAnswersCount < GAME_SCORE_TOWIN) {
-            int randomNum1 = Engine.getRandomNum(MIN_RANDOM, MAX_RANDOM);
-            int randomNum2 = Engine.getRandomNum(MIN_RANDOM, MAX_RANDOM);
+        while (correctAnswersCount < gameScoreTowin) {
+            int randomNum1 = Engine.getRandomNum(minRandom, maxRandom);
+            int randomNum2 = Engine.getRandomNum(minRandom, maxRandom);
             int randomNumberOperation = (int) (0 + Math.random() * maxOperationsCount - 0);
             char operation = operations[randomNumberOperation];
 
@@ -46,7 +46,7 @@ public class Calc {
                 break;
             }
 
-            if (correctAnswersCount == GAME_SCORE_TOWIN) {
+            if (correctAnswersCount == gameScoreTowin) {
                 Engine.conratulationUser(userName);
             }
         }
