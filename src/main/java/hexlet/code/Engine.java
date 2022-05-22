@@ -3,9 +3,9 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static final int MINRANDOM = 1;
-    public static final int MAXRANDOM = 100;
-    public static final int GAMESCORETOWIN = 3;
+    public static final int MIN_RANDOM = 1;
+    public static final int MAX_RANDOM = 100;
+    public static final int GAME_SCORE_TOWIN = 3;
     public static String greetingUser() {
         System.out.println();
         System.out.println("Welcome to the Brain Games dude!");
@@ -26,5 +26,8 @@ public class Engine {
     public static int getRandomNum(int minRandom, int maxRandom) {
         double randomNum = (minRandom + Math.random() * maxRandom - minRandom);
         return (int) randomNum;
+    }
+    public  static int getRndNum(int from, int to) {
+        return from + (int) (Math.random() * to);
     }
 }
