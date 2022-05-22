@@ -8,7 +8,11 @@ public class Calc {
     public static void startGame() {
         String userName = Engine.greetingUser();
 
+
         System.out.println("What is the result of the expression?");
+        final int MIN_RANDOM = 1;
+        final int MAX_RANDOM = 100;
+        final int GAME_SCORE_TOWIN = 3;
         final char subtraction = '-';
         final char addition = '+';
         final char multiplication = '*';
@@ -16,9 +20,9 @@ public class Calc {
         final char[] operations = {subtraction, addition, multiplication};
 
         int correctAnswersCount = 0;
-        while (correctAnswersCount < Engine.GAMESCORETOWIN) {
-            int randomNum1 = Engine.getRandomNum(Engine.MINRANDOM, Engine.MAXRANDOM);
-            int randomNum2 = Engine.getRandomNum(Engine.MINRANDOM, Engine.MAXRANDOM);
+        while (correctAnswersCount < GAME_SCORE_TOWIN) {
+            int randomNum1 = Engine.getRandomNum(MIN_RANDOM, MAX_RANDOM);
+            int randomNum2 = Engine.getRandomNum(MIN_RANDOM, MAX_RANDOM);
             int randomNumberOperation = (int) (0 + Math.random() * maxOperationsCount - 0);
             char operation = operations[randomNumberOperation];
 
@@ -42,7 +46,7 @@ public class Calc {
                 break;
             }
 
-            if (correctAnswersCount == Engine.GAMESCORETOWIN) {
+            if (correctAnswersCount == GAME_SCORE_TOWIN) {
                 Engine.conratulationUser(userName);
             }
         }
