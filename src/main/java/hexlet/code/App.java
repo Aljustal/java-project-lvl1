@@ -36,6 +36,7 @@ public class App {
                 break;
             case "6": Prime.startGame();
                 break;
+            case "0": break;
             default: System.out.println("You entered the wrong number");
         }
     }

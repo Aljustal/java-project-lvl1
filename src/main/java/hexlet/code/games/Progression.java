@@ -1,51 +1,35 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
-import java.util.Scanner;
-
 public class Progression {
+    static final int MIN_RANDOM_PROGRESSION = 1;
+    static final int MAX_RANDOM_PROGRESSION = 5;
+    static final int LENGTH_PROGRESSION = 10;
+    static final int MIN_RANDOM = 1;
+    static final int MAX_RANDOM = 100;
+    static final String QUESTION = "What number is missing in the progression?";
     public static void startGame() {
-        String userName = Engine.greetingUser();
 
-        System.out.println("What number is missing in the progression?");
-        final int minRandomProgression = 1;
-        final int maxRandomProgression = 5;
-        final int lengthProgression = 10;
-        final int minRandom = 1;
-        final int maxRandom = 100;
-        final int gameScoreToWin = 3;
+        String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
 
-        int correctAnswersCount = 0;
-        while (correctAnswersCount < gameScoreToWin) {
-            int randomNum = Engine.getRandomNum(minRandom, maxRandom);
-            int randomProgression = Engine.getRndNum(minRandomProgression, maxRandomProgression);
-            int correctAnswer = Engine.getRndNum(0, lengthProgression);
-            System.out.print("Question:");
-            for (var i = 0; i < lengthProgression; i++) {
-                if (correctAnswer == i) {
-                    System.out.print(" .. ");
+        for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
+
+            int randomNum = Engine.getRandomNum(MIN_RANDOM, MAX_RANDOM);
+            int randomProgression = Engine.getRndNum(MIN_RANDOM_PROGRESSION, MAX_RANDOM_PROGRESSION);
+            int correctAnswer = Engine.getRndNum(0, LENGTH_PROGRESSION);
+            String question = "";
+            for (var j = 0; j < LENGTH_PROGRESSION; j++) {
+                if (correctAnswer == j) {
+                    question += " .. ";
                     correctAnswer = randomNum;
                     randomNum += randomProgression;
                 } else {
-                    System.out.print(" " + randomNum + " ");
+                    question += " " + randomNum + " ";
                     randomNum += randomProgression;
                 }
             }
-            System.out.println();
-            System.out.print("Your answer: ");
-            Scanner userAnswerScanner = new Scanner(System.in);
-            int userAnswer = userAnswerScanner.nextInt();
-
-            if (userAnswer == correctAnswer) {
-                System.out.println("Correct!");
-                correctAnswersCount++;
-            } else {
-                String message = " is wrong answer ;(. Correct answer was ";
-                System.out.println("'" + userAnswer + "'" + message + correctAnswer + ".");
-                break;
-            }
-            if (correctAnswersCount == Engine.GAME_SCORE_TOWIN) {
-                Engine.conratulationUser(userName);
-            }
+            questionAndAnswer[i][0] = question;
+            questionAndAnswer[i][1] = String.valueOf(correctAnswer);
         }
+        Engine.runGame(QUESTION, questionAndAnswer);
     }
 }
