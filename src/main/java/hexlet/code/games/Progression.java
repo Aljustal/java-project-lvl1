@@ -19,11 +19,11 @@ public class Progression {
             String question = "";
             for (var j = 0; j < LENGTH_PROGRESSION; j++) {
                 if (correctAnswer == j) {
-                    question += " .. ";
+                    question += ".. ";
                     correctAnswer = randomNum;
                     randomNum += randomProgression;
                 } else {
-                    question += " " + randomNum + " ";
+                    question += randomNum + " ";
                     randomNum += randomProgression;
                 }
             }
