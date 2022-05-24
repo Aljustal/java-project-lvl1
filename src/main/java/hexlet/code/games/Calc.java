@@ -26,7 +26,7 @@ public class Calc {
                 case MULTIPLICATION -> randomNum1 * randomNum2;
                 default -> throw new RuntimeException("Unexpected operation");
             };
-            questionAndAnswer[i][0] = String.valueOf(randomNum1) + operation + String.valueOf(randomNum2);
+            questionAndAnswer[i][0] = String.valueOf(randomNum1) + " " + operation + " " + String.valueOf(randomNum2);
             questionAndAnswer[i][1] = String.valueOf(correctAnswer);
         }
         Engine.runGame(QUESTION, questionAndAnswer);
