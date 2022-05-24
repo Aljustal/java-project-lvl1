@@ -1,4 +1,8 @@
 run-dist:
 	./build/install/app/bin/app
+lint:
+	./gradlew checkstyleMain checkstyleTest
 build:
-	gradle build
+	./gradlew clean build
+clean:
+	./gradlew clean
