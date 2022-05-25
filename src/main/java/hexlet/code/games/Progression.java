@@ -15,12 +15,14 @@ public class Progression {
     }
 
     public static String[][] dataGeneration() {
+        final int minLengthProgression = 5;
+        final int maxLengthProgression = 10;
         String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
 
         for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int randomNum = Utils.getRandomNumber(MIN_RANDOM, MAX_RANDOM);
             int randomProgression = Utils.getRandomNumber(MIN_RANDOM_PROGRESSION, MAX_RANDOM_PROGRESSION);
-            int lengthProgression = Utils.getRandomNumber(MAX_RANDOM_PROGRESSION, LENGTH_PROGRESSION);
+            int lengthProgression = Utils.getRandomNumber(minLengthProgression, maxLengthProgression);
 
             int[] progressionQuestion = generateProgression(randomNum, randomProgression, lengthProgression);
             int correctAnswer = Utils.getRandomNumber(0, LENGTH_PROGRESSION);
