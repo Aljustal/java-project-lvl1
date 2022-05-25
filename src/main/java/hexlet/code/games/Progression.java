@@ -15,8 +15,6 @@ public class Progression {
     }
 
     public static String[][] dataGeneration() {
-        final int minLengthProgression = 5;
-        final int maxLengthProgression = 10;
         String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
 
         for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
