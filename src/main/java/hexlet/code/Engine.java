@@ -28,11 +28,4 @@ public class Engine {
         }
         System.out.println("Congratulations, " + userName + "!");
     }
-    public static int getRandomNum(int minRandom, int maxRandom) {
-        double randomNum = (minRandom + Math.random() * maxRandom - minRandom);
-        return (int) randomNum;
-    }
-    public  static int getRndNum(int from, int to) {
-        return from + (int) (Math.random() * to);
-    }
 }
