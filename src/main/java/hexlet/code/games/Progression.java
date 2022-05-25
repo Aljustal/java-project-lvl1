@@ -22,9 +22,8 @@ public class Progression {
         for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int randomNum = Utils.getRandomNumber(MIN_RANDOM, MAX_RANDOM);
             int randomProgression = Utils.getRandomNumber(MIN_RANDOM_PROGRESSION, MAX_RANDOM_PROGRESSION);
-            int lengthProgression = Utils.getRandomNumber(minLengthProgression, maxLengthProgression);
 
-            int[] progressionQuestion = generateProgression(randomNum, randomProgression, lengthProgression);
+            int[] progressionQuestion = generateProgression(randomNum, randomProgression, LENGTH_PROGRESSION);
             int correctAnswer = Utils.getRandomNumber(0, LENGTH_PROGRESSION);
             questionAndAnswer[i][0] = getAnswerAndQuestions(progressionQuestion, correctAnswer);
             questionAndAnswer[i][1] = String.valueOf(progressionQuestion[correctAnswer]);
