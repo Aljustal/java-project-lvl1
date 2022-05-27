@@ -15,12 +15,12 @@ public class Even {
         for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int randomNumber = Utils.getRandomNumber(MIN_RANDOM, MAX_RANDOM);
             questionAndAnswer[i][0] = String.valueOf(randomNumber);
-            questionAndAnswer[i][1] = isEvenNumber(randomNumber);
+            questionAndAnswer[i][1] = isEvenNumber(randomNumber) ? "yes" : "no";
         }
         return questionAndAnswer;
     }
-    public static String isEvenNumber(int number) {
-        return  (number % 2 == 0) ? "yes" : "no";
+    public static boolean isEvenNumber(int number) {
+        return  (number % 2 == 0);
     }
 }
 

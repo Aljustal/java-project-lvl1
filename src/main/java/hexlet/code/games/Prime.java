@@ -17,18 +17,18 @@ public class Prime {
 
             int randomNum = Utils.getRandomNumber(MIN_RANDOM, MAX_RANDOM);
             questionAndAnswer[i][0] = String.valueOf(randomNum);
-            questionAndAnswer[i][1] = isPrimeNumber(randomNum);
+            questionAndAnswer[i][1] = isPrimeNumber(randomNum) ? "yes" : "no";
         }
         return questionAndAnswer;
     }
-    public static String isPrimeNumber(int num) {
+    public static boolean isPrimeNumber(int num) {
         boolean isPrime = true;
-        for (var i = 2; i < num - 1; i++) {
+        for (var i = 2; i < Math.sqrt(num); i++) {
             if (num % i == 0) {
                 isPrime = false;
             }
         }
-        return isPrime ? "yes" : "no";
+        return isPrime;
     }
 
 }

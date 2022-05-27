@@ -19,16 +19,19 @@ public class Calc {
             int randomNum2 = Utils.getRandomNumber(MIN_RANDOM, MAX_RANDOM);
             int randomNumberOperation = (int) (0 + Math.random() * OPERATIONS.length - 0);
             char operation = OPERATIONS[randomNumberOperation];
-
-            int correctAnswer = switch (operation) {
-                case '-' -> randomNum1 - randomNum2;
-                case '+' -> randomNum1 + randomNum2;
-                case '*' -> randomNum1 * randomNum2;
-                default -> throw new RuntimeException("Operation for which logic is not defined");
-            };
+            var correctAnswer = calculate(randomNum1, randomNum2, operation);
             questionAndAnswer[i][0] = String.valueOf(randomNum1) + " " + operation + " " + String.valueOf(randomNum2);
             questionAndAnswer[i][1] = String.valueOf(correctAnswer);
         }
         return questionAndAnswer;
+    }
+    public static String calculate(int num1, int num2, char operation) {
+        int correctAnswer = switch (operation) {
+            case '-' -> num1 - num2;
+            case '+' -> num1 + num2;
+            case '*' -> num1 * num2;
+            default -> throw new RuntimeException("Operation " + "'" + operation + "'" + " defined");
+        };
+        return String.valueOf(correctAnswer);
     }
 }

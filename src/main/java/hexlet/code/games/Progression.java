@@ -21,7 +21,7 @@ public class Progression {
             int randomNum = Utils.getRandomNumber(MIN_RANDOM, MAX_RANDOM);
             int randomProgression = Utils.getRandomNumber(MIN_RANDOM_PROGRESSION, MAX_RANDOM_PROGRESSION);
 
-            int[] progressionQuestion = generateProgression(randomNum, randomProgression, LENGTH_PROGRESSION);
+            int[] progressionQuestion = generateProgression(randomNum, randomProgression);
             int correctAnswer = Utils.getRandomNumber(0, LENGTH_PROGRESSION);
             questionAndAnswer[i][0] = getAnswerAndQuestions(progressionQuestion, correctAnswer);
             questionAndAnswer[i][1] = String.valueOf(progressionQuestion[correctAnswer]);
@@ -29,15 +29,11 @@ public class Progression {
         return questionAndAnswer;
     }
 
-    public static int[] generateProgression(int firstElement, int step, int lengthProgressions) {
-        if (lengthProgressions > LENGTH_PROGRESSION) {
-            lengthProgressions = LENGTH_PROGRESSION;
-        }
-        int[] progression = new int[lengthProgressions];
-        progression[0] = firstElement;
+    public static int[] generateProgression(int firstElement, int step) {
+        int[] progression = new int[LENGTH_PROGRESSION];
 
-        for (var i = 1; i < lengthProgressions; i++) {
-            progression[i] = progression[i - 1] + step;
+        for (var i = 0; i < LENGTH_PROGRESSION; i++) {
+            progression[i] = firstElement + step * (i - 1);
         }
         return progression;
     }
